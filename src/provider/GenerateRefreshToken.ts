@@ -7,7 +7,7 @@ class GenerateRefreshToken{
 
     async execute(userId: string){
 
-       const expiresIn = dayjs().add(1, "minute").unix();
+       const expiresIn = dayjs().add(1, "day").unix();
 
         const refreshToken = await client.refreshToken.create({
             data: {

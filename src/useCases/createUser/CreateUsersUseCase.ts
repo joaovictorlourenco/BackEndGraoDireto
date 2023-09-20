@@ -28,12 +28,12 @@ class CreateUserUseCase {
         }
 
         //Cadastrar o usuário
-        const emailHash = await hash(email, 8);
+
         const passwordHash = await hash(password, 8);
 
         const user = await client.user.create({
             data: {
-                email : emailHash,
+                email ,
                 username,
                 name,
                 password: passwordHash,

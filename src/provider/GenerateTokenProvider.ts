@@ -7,7 +7,7 @@ class GenerateTokenProvider{
         //Gerar token
         const token = sign({}, process.env.PRIVATE_KEY_JWT, {
             subject: userId,
-            expiresIn: "1m"
+            expiresIn: "1d"
         });
         
         return token;

@@ -5,6 +5,7 @@ import { Request, Response } from "express";
 class  CreateUserController {
 
     async handle(request: Request, response: Response){
+
         const { email, name, username, password } = request.body;
 
         const createUserUseCase = new CreateUserUseCase();
@@ -16,7 +17,7 @@ class  CreateUserController {
             password,
         });
 
-        return response.json(user);
+        return response.status(200).json(user);
     }
 
 }
